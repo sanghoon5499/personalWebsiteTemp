@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <!-- Bootstrap and .css file -->
+        <!--<link rel="stylesheet" href="css_files/index_style.css">-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+
+
+    <!-- 
+        To do:
+        - create projects page 8-17
+        - create resume page
+
+        - create github, linkedin icons 8-17
+        - get profile picture 8-17
+
+        - Main page:
+            - socials buttons: 8-17
+            - when user hovers, the icon tilts
+            - when user clicks, the icon rolls out of the box (transition plays)
+            - resume button
+            - projects button
+
+        - Resume page:
+            - mail button
+            - pdf viewer
+        
+        - Projects page:
+            - each project has small column with short description
+            - link to its' github
+            - link to the service (github pages page)
+    
+        - "Rain" sloped line geometry background image
+        - hand-drawn arrow looking background image behind "resume" and "projects" box
+    -->
+
+    <body>
+        <div class="container-fluid">
+            <div class="row" style="height: 10vh; background-color: white;"></div>
+            <div class="row" style="height: 50vh;">
+
+                <div class="col-sm-3 d-none d-sm-block"></div>
+
+                <div class="col-sm-6">
+                    <div class="row" style="height: 40vh; background-color: white;">
+                        <div class="col-sm-4 my-auto">
+                            <img src="img_4846 - Copy.JPG" style="height: 40vh; border-radius: 50%;">
+                        </div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-6 my-auto text-center">
+                            <h1 style="font-size:10vh">Sanghoon Choi</h1>
+                        </div>
+                    </div>
+                    <div class="row" style="height:4vh"></div>
+                    <div class="row" style="height: 15vh; background-color: white;">
+                        <div id="github" class="col-sm-6 my-auto" onclick="animateGithub()">
+                            <img src="GitHub-Mark-120px-plus.png" style="height: 10vh" class="img-responsive center-block d-block mx-auto">
+                        </div>
+                        <div class="col-sm-6 my-auto" onclick="location.href='https://www.linkedin.com/in/sanghoonchoi/';">
+                            <img src="LI-In-Bug.png" style="height: 10vh" class="img-responsive center-block d-block mx-auto">
+                        </div>
+                        <!--github, linkedin-->
+                        <!--when switching pages, do a drop down white screen of the logo of the service-->
+                    </div>
+                    <div class="row" style="height: 20vh; background-color: white;">
+                        <div class="col-sm-6 my-auto text-center" onclick="location.href='projects.html';">
+                            <h1>projects</h1>
+                        </div>
+                        <div class="col-sm-6 my-auto text-center" onclick="location.href='resume.html';">
+                            <h1>resume</h1>
+                        </div>
+                        <!--resume (mail button), projects-->
+                    </div>
+                </div>
+
+                <div class="col-sm-3 d-none d-sm-block"></div>
+            </div>
+        </div>
+    </body>
+
+    
+
+    <script>
+        var githubIcon = document.getElementById("github");
+        
+        // Start the animation with JavaScript
+        function animateGithub() {
+            githubIcon.style.animation = "rollLeft 4s";
+        }
+        
+        // Event listener functions
+        githubIcon.addEventListener("animationend", iconEnd);
+        
+        function iconEnd() {
+            window.location.href = 'https://github.com/sanghoon5499';
+            //location.reload()
+            console.log("what")
+        }
+
+        
+    </script>
+
+    <style>
+        @keyframes rollLeft {
+            0% {
+                transform: translateX(0)
+            }
+            20% {
+                transform: translateX(-2.5vw);
+                -moz-transform: rotate(-110deg)
+            }
+            40% {
+                transform: translateX(-10vw);
+                -moz-transform: rotate(-220deg)
+            }
+            60% {
+                transform: translateX(-22.5vw);
+                -moz-transform: rotate(-330deg)
+            }
+            80% {
+                transform: translateX(-40vw);
+                -moz-transform: rotate(-440deg)
+            }
+            100% {
+                transform: translateX(-62.5vw);
+                -moz-transform: rotate(-550deg)
+            }
+
+
+        }
+    </style>
+
+    
+</html>
